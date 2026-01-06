@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monthly Map Animation</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div id="month-page">
+    <h1>Selecione um mês</h1>
+  
+    <div class="months">
+      <button onclick="selectMonth('2024-04')">Abril 2024</button>
+      <button onclick="selectMonth('2024-05')">Maio 2024</button>
+      <button onclick="selectMonth('2024-06')">Junho 2024</button>
+      <button onclick="selectMonth('2024-07')">Julho 2024</button>
+      <button onclick="selectMonth('2024-08')">Agosto 2024</button>
+      <button onclick="selectMonth('2024-09')">Setembro 2024</button>
+      <button onclick="selectMonth('2024-10')">Outubro 2024</button>
+      <button onclick="selectMonth('2024-11')">Novembro 2024</button>
+      <button onclick="selectMonth('2024-12')">Dezembro 2024</button>
+  
+      <button onclick="selectMonth('2025-01')">Janeiro 2025</button>
+      <button onclick="selectMonth('2025-02')">Fevereiro 2025</button>
+      <button onclick="selectMonth('2025-03')">Março 2025</button>
+      <button onclick="selectMonth('2025-04')">Abril 2025</button>
+      <button onclick="selectMonth('2025-05')">Maio 2025</button>
+      <button onclick="selectMonth('2025-06')">Junho 2025</button>
+      <button onclick="selectMonth('2025-07')">Julho, Agosto, Setembro 2025</button>
+      <button onclick="selectMonth('2025-10')">Outubro 2025</button>
+    </div>
+  </div>
+  
+
+  <!-- PAGE 2 -->
+  <div id="map-page" hidden>
+    <div id="map"></div>
+
+    <!-- OVERLAY AFTER 5s -->
+    <div id="overlay">
+      <div class="overlay-content">
+
+        <div class="images">
+        </div>
+
+        <button onclick="goBack()">Proximo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

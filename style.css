@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: #fffafc;
+}
+
+/* =========================
+   MONTH PAGE
+========================= */
+#month-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#month-page h1 {
+  color: #b03060;
+  margin-bottom: 25px;
+}
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 520px;
+}
+
+/* =========================
+   CUTE ANNIVERSARY BUTTONS
+========================= */
+.months button {
+  position: relative;
+  padding: 18px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ffe6ec, #fff5f8);
+  border: 2px solid #ffb6c1;
+  border-radius: 18px;
+
+  color: #b03060;
+  box-shadow: 0 8px 18px rgba(255, 182, 193, 0.35);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+/* Hover lift + glow */
+.months button:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(255, 105, 180, 0.45);
+}
+
+/* Heart decoration */
+.months button::before {
+  content: "❤";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 22px;
+  color: #ff4d6d;
+  opacity: 0.8;
+}
+
+/* Ribbon shine */
+.months button::after {
+  content: "";
+  position: absolute;
+  left: -40%;
+  top: 0;
+  width: 180%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.months button:hover::after {
+  transform: translateX(100%);
+}
+
+/* =========================
+   MAP
+========================= */
+#map-page,
+#map {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+#overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay-content {
+  max-width: 900px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay-content h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Images grid */
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.images img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Overlay button */
+.overlay-content button {
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #ff8fab, #ff4d6d);
+  color: white;
+  font-weight: bold;
+
+  box-shadow: 0 8px 20px rgba(255, 77, 109, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overlay-content button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(255, 77, 109, 0.8);
+}
+
+/* =========================
+   SNOW / FALLING EFFECT
+========================= */
+.snow {
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear forwards;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
